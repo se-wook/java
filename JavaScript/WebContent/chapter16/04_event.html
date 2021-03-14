@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script type="text/javascript">
+$(function(){
+    /* on(이벤트명, 처리할 함수) 
+        - 현재 파일에 있는 html tag 뿐만 아니라 동적으로 추가된 tag에도 event를 적용할 수 있다.
+       $(document or 'body'). on(이벤트명, 'selector', 처리할 함수)
+        - 동적으로 추가된 html tag에 이벤트를 연결할 수 있다. 
+    */
+    /*$('#btn1').on('click', function(){
+        console.log(this);
+        console.log(event);
+        console.log('btn1 click');
+    });*/
+    $('#btn1').click(function(){
+        console.log(this);
+        console.log(event);
+        console.log('btn1 click');
+    });
+});
+</script>
+</head>
+<body>
+<button id="btn1">Click Me</button>
+<button id="btn2">Click Me</button>
+</body>
+</html>

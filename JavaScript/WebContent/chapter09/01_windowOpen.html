@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src='../js/basic.js'></script>
+<script type="text/javascript">
+// body가 load 되면 호출되도록 콜백함수로 등록  = <body onload=''/>
+
+function openWindow(){
+	// open(url, 창이름, '옵션')
+	var newWind = window.open('../chapter11/addFileForm.html','','width=300,height=300,location="no"');
+	newWind.moveTo(window.screenX+event.clientX, screenY+event.clientY);
+	
+}
+
+</script>
+</head>
+<body>
+	<button id='btn1' onclick='openWindow()'>새창</button>
+</body>
+</html>
+
+

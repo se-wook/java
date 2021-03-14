@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		변수 선언방법
+		1. var 변수명; or var 변수명 = 값;
+			> 위치에 따라 전역 또는 지역 변수로 활용
+		2. 변수명 = 값;
+			> 항상 전역 변수
+
+		전역 변수는 window 내장 객체의 속성으로 추가됨.		
+	*/
+  
+	var g1 = 'hello';
+	g2 = 'world';
+	console.log(window); //내장 객체 확인
+	
+	function variableTest(){
+		var local = 'local';
+		g3 = 'javascript';
+	}
+	variableTest();
+	//console.log(local);
+	console.log(g3);
+	
+	
+	//변수에 함수를 저장 가능
+	var functionVar = function(){
+		console.log('함수..');
+	}
+	console.log(functionVar);
+	console.log(window);
+	
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/basic.js"></script>
+<script type="text/javascript">
+	$(function(){
+		alert("hi");
+		$('#addFile').click(addFileForm);
+		$('body').on('click','input[value=삭제]',removeForm);
+	});
+
+	function addFileForm() {
+		var d = $('<div>');
+			d.append("<input type='file' 	name = 'fileup'/>")
+			.append("<input type='button' 	value='삭제'/>")
+			.appendTo('#content');
+	}
+	function removeForm(){
+		$(this).parent().remove();
+	}
+</script>
+</head>
+<body>
+	<form id='frm'>
+		<input type='button'  value='파일추가' id='addFile'>
+		<section id='content'></section>	
+	</form>
+</body>
+</html>

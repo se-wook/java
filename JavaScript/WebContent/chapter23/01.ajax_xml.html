@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script type="text/javascript">
+$(function(){
+	$('#calc').click(function(){
+		$.ajax({
+			 url : 'jsp/plus_ajax_xml.jsp' // 비동기적으로 데이터를 전송 받을 서버 URL
+			,data : { op1 : $('#op1').val() // 서버에 보낼 요청 데이터
+					, op2 : $('#op2').val() // 	- 입력데이터
+					}
+			,dataType : 'xml' // 서버로부터 받는 데이터 타입
+			,success : function(data,status,xhr){ // 전송을 잘 받았을떄
+				// selector를 통해서 찾기
+				// 서버로부터 전송 받은 data 에서 result 태그를 찾아서 태그의 바디를 추출
+				$('#result').val($('result',data).text());
+			}
+			,error : function(err){
+				alert(err)
+			}
+			
+		})
+	})
+});
+</script>
+</head>
+<body>
+<input type="text" id="op1"/> + <input type="text" id="op2"/>
+<button id="calc">=</button><input type="text" readonly="readonly" id="result"/>
+<hr/>
+</body>
+
+
+
+
+
+</html>

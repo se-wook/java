@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customerlist>
+	<customer>
+		<name>ssafy</name>
+		<age>2</age>
+		<address>강남구 역삼동</address>
+	</customer>
+	<customer>
+		<name>홍길동</name>
+		<age>2</age>
+		<address>울도국</address>
+	</customer>
+</customerlist>

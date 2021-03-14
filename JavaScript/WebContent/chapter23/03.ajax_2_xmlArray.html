@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script type="text/javascript">
+$(function(){
+	$('#calc').click(function(e){
+		$.ajax({
+			url: 'jsp/plus_ajax3_xml.jsp'
+			,dataType: 'xml'
+			,success: processResult
+			,error: function(err){
+				console.log(err);
+			}
+		})
+	})
+});
+
+function processResult(xmlData, status, xhr){
+	var errorMsg = $('error',xmlData).text(); //<error>의 body 정보 추출
+	if(errorMsg !=''){ //error가 발생한경우 
+		alert(errorMsg);
+	}else{
+		var html="<table><tr><td>번호</td><td>제목</td><td>작성자</td></tr>";
+		// xmlData 에서 data라는 태그를 찾는거에요
+		$('data',xmlData).each(function(index, item){
+			html += "<tr><td>"
+			html += $('no',item).text();
+			html += "</td><td>"
+			html += $('title',item).text();
+			html += "</td><td>"
+			html += $('id',item).text();
+			html += "</td></tr>";
+		});
+		html += "</table>";
+		$('#content').html(html);
+	}
+}
+</script>
+</head>
+<body>
+<button id="calc">게시글 보기</button>
+<div id="content"></div>
+<hr/>
+</body>
+
+
+
+
+
+</html>

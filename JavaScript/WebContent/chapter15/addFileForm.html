@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	// $(function(){
+	// 	$('#addFile').click(function(){
+	// 		$("<div><input type='File' value='파일선택' class='files' id='choiceFile'><input type='button' value='파일삭제' class='files' id='deleteFile'></div>").appendTo($('#content'));
+	// 	})
+		
+	// 	$('#content').click(function(){
+	// 		$('div').first().remove();
+	// 	})
+	// })
+
+	$(function(){
+		var count = 0;
+		$('#addFile').click(function(){
+			var d = $('<div id="item_'+count+'">');
+			d.append("<input type='file' 	name = 'fileup'/>")
+			.append("<input type='button' 	value='삭제' 		onclick='removeForm("+ count++ +")'/>")
+			.appendTo('#content');
+			
+		})
+	})
+
+	function removeForm(cnt){
+		alert(cnt);
+		$('#item_'+cnt).remove();
+	}
+	
+	/*function removeForm(btn){
+		$(btn).parent().remove();
+	}*/
+</script>
+</head>
+<body>
+	<form id='frm'  method="post" encType='multipart/form-data'>
+		<input type='button'  value='파일추가' id='addFile'>
+		<article id='content'></article>	
+	</form>
+</body>
+</html>

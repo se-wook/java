@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var click = document.getElementById('click');
+	click.onclick = function(){
+		var content = document.getElementById('content');
+		content.innerHTML = '<h1>hello</h1>'
+	}
+	var cancel = document.getElementById('cancel');
+	cancel.onclick = eventHandle2;
+}
+
+function eventHandle2(){
+	var content = document.getElementById('content');
+	content.innerHTML='';
+}
+</script>
+</head>
+<body>
+<button id='click'>click</button>
+<button id='cancel'>cancel</button>
+<div id='content'></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

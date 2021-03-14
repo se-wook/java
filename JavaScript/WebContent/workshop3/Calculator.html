@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<style type="text/css">
+	#calc { 
+		border: 1px solid  gray;
+		width: 350px;
+		text-align: center;	
+	}
+	#formula{
+		text-align: right;
+		width: 80%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}  
+	#resultDiv{
+		text-align: left;
+		margin-left: 40px;
+	}
+	button{
+		width:70px;
+		height:70px;
+	}
+</style>
+<script>	
+$(function(){
+	var count = 1;
+	$('#pad').click(function(e){
+		var id = e.target.getAttribute('id');
+		if(id != '' && id != null){
+			if(id == clear){
+				$('#formula').val('');
+			}else if(id == 'answer'){
+				var tmp = count + ". " + $('#formula').val();
+				$('#formula').val(eval($('#formula').val()));
+				$('#result').html($('#result').html() + "<p>" + tmp +" = " +$('#formula').val() + "</p>");
+				count+=1;
+				$('#formula').val('');
+			}else {
+				$('#formula').val($('#formula').val()+$(e.target).text());
+			}
+		}
+	})
+ })
+</script>
+</head>
+<body>
+	 <div id='calc'>
+	 	<input 	type='text' id='formula' value='' 
+	 			placeholder='0.0' readonly="readonly" />
+	 	<div id='pad'>
+	 		<button id='sev'>7</button>
+	 		<button id='eig'>8</button>
+	 		<button id='nin'>9</button>
+	 		<button id='plus'>+</button>
+	 		<button id='fou'>4</button>
+	 		<button id='fiv'>5</button>
+	 		<button id='six'>6</button>
+	 		<button id='minus'>-</button>
+	 		<button id='one'>1</button>
+	 		<button id='two'>2</button>
+	 		<button id='thr'>3</button>
+	 		<button id='mul'>*</button>
+	 		<button id='zer'>0</button>
+	 		<button id='clear'>CE</button>
+	 		<button id='answer'>=</button>
+	 		<button id='divide'>/</button>
+	 	</div>	
+	 	<div id='resultDiv'>
+	 		<h2>결과 이력</h2>
+	 		<p id='result'></p>
+	 	</div>	
+	 </div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#submenu{ 		display: none; 	}
+</style>
+<script type="text/javascript">
+//	setTimeout(함수명, 시간) : 지정한 시간 후에 함수가 호출되도록 설정
+
+// 작은따옴표 안에 괄호까지 풀함수를 넣던지 아니면 작은따옴표랑 괄호 빼던지 하면 됨.
+    //3초후에 eventFun()함수가 호출되도록 설정
+	function eventFun(){
+		var submenu = document.getElementById('submenu');
+		submenu.style.display = 'block';
+	}
+	
+	setTimeout('eventFun()', 2000);
+</script>
+</head>
+<body>
+	<div id="content">
+		<div id='submenu'>
+		   <ul>
+		   		<li>menu1</li>
+		   		<li>menu2</li>
+		   		<li>menu3</li>
+		   </ul>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ *  javascript에서 함수의 인자개수가 꼭 일치 하지 않아도 
+ *  함수가 호출됨.
+ */
+
+ function f(a=0,b=0,c=0,d=0){
+	console.log('a:',a);	
+	console.log('b:',b);	
+	console.log('c:',c);	
+	console.log('d:',d);
+	console.log('인자 개수 :', arguments.length);
+	console.log('인자 정보');
+	for(var el of arguments){
+		console.log(el);
+	}
+	console.log("=====================");
+ }
+
+	f();
+	f(5);
+	f(5,6);
+	f(5,6,7);
+	f(5,6,7,8);
+	f(5,6,7,8,9);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

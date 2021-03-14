@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script>
+/*
+ $.noConflict();
+ 프로토타입도 $를 사용하므로 같이 사용할 때 충돌이 일어남
+ 충돌 방지를 위해 jquery에서 $()를 사용하지 않고 jQuery()만 사용하도록 설정
+*/
+
+$.noConflict();
+/*$(function() {
+    console.log("hi")
+})*/
+
+jQuery(function(){
+    console.log("hi");
+})
+</script>
+</head>
+<body>
+
+</body>
+</html>

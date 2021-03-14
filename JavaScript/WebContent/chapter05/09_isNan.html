@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	//NaN : Not a Number
+	// isNaN() : NaN인지 아닌지 구별
+	
+	function formCheck(){
+		var quantity = document.getElementById('quantity');
+		
+		if(isNaN(quantity.value)){
+			alert('정수로 입력해주세요.');
+			quantity.value = '';
+			quantity.focus();
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		수량 : <input type='text' name='quantity' id='quantity'/>
+		<input type='submit'  value='구매' onclick='return formCheck()'/>
+	</form>
+</body>
+</html>
+
+
+
+
+

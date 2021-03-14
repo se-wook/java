@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	  setInterval('함수명', ms) 
+	  - 지정 초마다 함수를 호출 
+	*/
+	var intervalId = setInterval(moveImg, 500);
+	var x = 0;
+	function moveImg(){
+		var poster = document.getElementById('poster');
+		x += 5;
+		poster.style.left = x+'px';
+		console.log('x:',x);
+	}
+	function stopImg(){
+		// setInterval 함수를 종료.
+		clearInterval(intervalId);
+	}
+</script>
+<style type="text/css">
+	img { 
+		position: relative;
+		left:0px;
+		top:0px;
+	}
+</style>
+</head>
+<body>
+	<img src='../images/movie_image.jpg' width='150' id='poster'><br/>
+	<button onclick='stopImg()'>종료</button>
+</body>
+</html>
+
+
+
+

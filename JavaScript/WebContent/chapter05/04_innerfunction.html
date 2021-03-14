@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*함수 안에 함수를 선언할 수 있다. */
+	function outer(type){
+		if(type == 1){
+			function inner1(){
+				console.log('inner1함수임');
+			}
+			inner1();
+		}else{
+			function inner2(){
+				console.log('inner2함수임');
+			}
+			inner2();
+		}
+	}
+	outer(1);
+	
+	// 함수의 인자로 함수를 사용
+	function outer2(a){
+		if(typeof(a) == 'function'){
+			a();
+		}
+	}
+	outer2(function(){console.log('익명함수를 인자로 전달함')});
+	// 함수의 리턴으로 함수를 전달
+	function outer3(){
+		return function(){console.log('익명함수를 리턴함')};
+	}
+	var f1 = outer3();
+	f1();
+	outer3()();
+</script>
+</head>
+<body>
+</body>
+</html>

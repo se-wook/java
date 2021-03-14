@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script type="text/javascript">
+$(function(){
+	// $('h1').css('color','pink');
+	
+	/*
+	each()
+		- selector 를 통해 찾은 태그를 하니씩 따로 처리해줌
+		- 사용방법 1
+		  $('selector'[,content]).each(function(index, item){
+			  
+		  })
+		- 사용방법 2
+		  $.each(반복시킬목록데이터, function(index, item){
+			  
+		  })
+	*/
+	
+	$('h1').each(function(index, item){
+		console.log(index, item);
+		console.log(this); // each 에서 this 는 item 하나하나를 가리킨다.
+	})
+
+});
+</script>
+<style type="text/css">
+	.reverse{
+		background: pink;
+		color:purple;	
+	}
+</style>
+</head>
+<body>
+<h1>header - 0</h1>
+<h1>header - 1</h1>
+<h1>header - 2</h1>
+<h1>header - 3</h1>
+</body>
+</html>

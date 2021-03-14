@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ * 
+ 이벤트 등록 - 표준
+ addEventListener('이벤트명', 처리할함수(handler), 이벤트전파)
+ 
+ 
+ */
+ window.onload = function(event){
+	var click = document.getElementById('click');
+	click.addEventListener('click', function(event){
+		// 
+		console.log(event);
+		// this는 현재 객체
+		console.log(this);
+		this.innerHTML = '클릭';
+		var content = document.getElementById('content');
+		content.innerHTML='<h1>안녕</h1>';
+		
+	});
+	
+	var cancel = document.getElementById('cancel');
+	cancel.addEventListener('click', eventHandle2);
+ }
+ 
+ function eventHandle2(){
+	var content = document.getElementById('content');
+	content.innerHTML = '';
+ }
+</script></head><body>
+<button id='click'>click</button>
+<button id='cancel'>cancel</button>
+<div id='content'></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ - 함수 리턴
+ */
+ function f1(a) {
+	return a + ' world';
+ }
+ 
+ console.log(f1('java'));
+ 
+ function checkForm(){
+	 var id = document.getElementById('id');
+	 var pw = document.getElementById('password');
+	 
+	 if(id.value == ''){
+		alert('id를 입력하세요');
+	 	id.focus();
+	 	return false; // action 에 지정한 서버로 데이터가 전송되지 않음.
+	 }
+	 else if(!pw.value){
+		alert('pw를 입력하세요');
+		pw.focus();
+		return false;
+	 }
+	 else{
+		var frm = document.getElementById('frm');
+		frm.submit(); // action에 지정한 서버로 데이터 전송.
+		
+	 }
+ }
+ 
+</script></head><body>
+<form action='a.jsp'  id='frm'>
+	아 이 디 : <input type='text' name="id"  id='id'><br/>
+	비밀번호 : <input type='password' name='password' id='password'/><br>
+	<input type='submit' value='로그인1' onclick='checkForm()'>			
+	<input type='button' value='로그인2' onclick='checkForm()'>
+	<a href="#" onclick='checkForm()'>로그인3</a>			
+	<input type='submit' value='로그인4' onclick='return checkForm()'>			
+</form>
+</body>
+</html>
+
+
